@@ -1,5 +1,6 @@
 # GA-optimized-NN
 Optimize a neural network using a genetic algorithm
+Data set: https://www.kaggle.com/c/hivprogression
 
 main_NN_GA_2.py employs genetic_algorithm_v1.py and NN_mod3_GA.py to find the classification problem of the proposed data set.
 
