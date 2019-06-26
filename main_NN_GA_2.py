@@ -9,7 +9,7 @@ X, Y, XTest, YTest = nn.load_data()
 #parameters, costit, errorit, numclas = nn.nn_model(X, Y, 7, 200, True, 1.2)
 #np.random.seed(9001)
 pop_size = 100
-generations = 300
+generations = 700
 #mutation = 0.1
 
 #Get size of the NN
@@ -64,14 +64,14 @@ for generation in range(generations):
     #-=-=-=-=-=     SELECT - ROULETTE
     #-=-=-=-=-=     CROSSOVER AND MUTATION
     #Apply elitism, the best one goes to the next generation
-    ini_pop[:,0] = sorted_pop[0:size,0]
+    #ini_pop[:,0] = sorted_pop[0:size,0]
     #generate population, N-1
-    for N in range(pop_size-1):
-    #for N in range(pop_size): 
+    #for N in range(pop_size-1):
+    for N in range(pop_size): 
         parent_a, parent_b = g.roulette(sorted_pop)
         child = g.crossover(parent_a[0:size], parent_b[0:size])
-        ini_pop[:,N+1]=g.mutation(child)
-        #ini_pop[:,N]=g.mutation(child)
+        #ini_pop[:,N+1]=g.mutation(child)
+        ini_pop[:,N]=g.mutation(child)
 
 #-=-=-=-=-=         END OF ITERATIONS
 
