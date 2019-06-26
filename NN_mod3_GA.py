@@ -18,13 +18,7 @@ from sklearn.model_selection import train_test_split
 
 
 def load_data():
-    if os.name == 'nt':
-        path = ""
-    else:
-        path = "/home/cristiam/Documents/ISI_WEiTI/II/EINIS/project"
-        # Set working directory and load data
-        os.chdir(path)
-        
+  
     Train = pd.read_csv('training_data.csv', sep='\s*,\s*',
                         header=0, encoding='ascii', engine='python')
     # Sort the dataframe by columns, so that we will get the biggest amount of '1'
